@@ -1,0 +1,19 @@
+.editBox {
+  height: auto;
+  width: 40%;
+  margin: auto;
+  box-shadow: black;
+  margin-top: 50px;
+}
+.editBox input {
+  width: 95%;
+  height: 29px;
+  font-size: 18px;
+  display: block;
+  margin: auto;
+}
+.editBox button {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
