@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import { getMusicRecord } from "../Redux/AppReducer/action";
+import Helmet from "react-helmet";
 
 const SingleMusicRecord = () => {
   const { id } = useParams();
@@ -19,6 +20,9 @@ const SingleMusicRecord = () => {
   console.warn(currentMusic);
   return (
     <>
+      <Helmet>
+        <title>Music App | Single Music</title>
+      </Helmet>
       <h2 style={{ textAlign: "center" }}>Single Musing page</h2>
       {musicRecords.length > 0 && (
         <div

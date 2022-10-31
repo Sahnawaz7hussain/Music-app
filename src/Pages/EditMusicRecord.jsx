@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { getMusicRecord, updateMusicRecord } from "../Redux/AppReducer/action";
 import "../Styles/EditStyles.css";
+import Helmet from "react-helmet";
+
 const EditMusicRecord = () => {
   const [musicName, setMusicName] = useState("");
   const dispatch = useDispatch();
@@ -39,6 +41,9 @@ const EditMusicRecord = () => {
   // console.log("state:::", musicRecords);
   return (
     <div className="editBox">
+      <Helmet>
+        <title>Music App Edit</title>
+      </Helmet>
       <input
         type="text"
         value={musicName}

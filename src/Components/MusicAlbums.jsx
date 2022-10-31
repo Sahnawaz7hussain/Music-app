@@ -25,7 +25,6 @@ const MusicAlbums = () => {
       dispatch(getMusicRecord(queryParams));
     }
   }, [location.search]);
-  // console.log(musicRecords);
   return (
     <>
       {musicRecords.length > 0 &&

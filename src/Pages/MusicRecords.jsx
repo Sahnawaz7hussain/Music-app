@@ -2,16 +2,22 @@ import React from "react";
 import Styled from "styled-components";
 import FilterSort from "../Components/FilterSort";
 import MusicAlbums from "../Components/MusicAlbums";
+import Helmet from "react-helmet";
 const MusicRecords = () => {
   return (
-    <Wrapper color="green">
-      <WrapperFilterSort>
-        <FilterSort />
-      </WrapperFilterSort>
-      <WrapperMusicAlbum>
-        <MusicAlbums />
-      </WrapperMusicAlbum>
-    </Wrapper>
+    <div>
+      <Helmet>
+        <title>Music App | Home</title>
+      </Helmet>
+      <Wrapper color="green">
+        <WrapperFilterSort>
+          <FilterSort />
+        </WrapperFilterSort>
+        <WrapperMusicAlbum>
+          <MusicAlbums />
+        </WrapperMusicAlbum>
+      </Wrapper>
+    </div>
   );
 };
 const Wrapper = Styled.div`

@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { login } from "../Redux/AuthReducer/action";
 import { USER_LOGIN_SUCCESS } from "../Redux/AuthReducer/actionType";
 import "../Styles/LoginStyles.css";
+import Halmet from "react-helmet";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,23 +30,28 @@ const Login = () => {
   };
 
   return (
-    <div className="loginBox">
-      <h2>Login Page</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          placeholder="type: eve.holt@reqres.in"
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          placeholder="Your First Name"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Submit</button>
-      </form>
+    <div>
+      <Halmet>
+        <title>Music App | Login</title>
+      </Halmet>
+      <div className="loginBox">
+        <h2>Login Page</h2>
+        <form onSubmit={handleSubmit}>
+          <input
+            placeholder="type: eve.holt@reqres.in"
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            placeholder="Your First Name"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   );
 };
