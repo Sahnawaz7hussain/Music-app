@@ -2,7 +2,7 @@ import * as types from "./actiontype";
 
 const initState = {
   musicRecords: [],
-  isloading: false,
+  isLoading: false,
   isError: false,
 };
 export const reducer = (oldState = initState, action) => {
@@ -11,19 +11,19 @@ export const reducer = (oldState = initState, action) => {
     case types.GET_MUSIC_RECORD_REQUEST:
       return {
         ...oldState,
-        isloading: true,
+        isLoading: true,
       };
     case types.GET_MUSIC_RECORD_SUCCESS:
       return {
         ...oldState,
-        isloading: false,
+        isLoading: false,
         isError: false,
         musicRecords: payload,
       };
     case types.GET_MUSIC_RECORD_FAILURE:
       return {
         ...oldState,
-        isloading: false,
+        isLoading: false,
         isError: true,
         musicRecords: [],
       };

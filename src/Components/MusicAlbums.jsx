@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { getMusicRecord } from "../Redux/AppReducer/action";
+import Loadingpic from "../Images/loadingpic.gif";
 const MusicAlbums = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
@@ -9,7 +10,7 @@ const MusicAlbums = () => {
   const { musicRecords, isLoading, isError } = useSelector((store) => {
     return store.appReducer;
   });
-  // console.log(location);
+
   useEffect(() => {
     const genre = searchParams.getAll("genre");
     const sortBy = searchParams.get("sortBy");
@@ -27,7 +28,15 @@ const MusicAlbums = () => {
   }, [location.search]);
   return (
     <>
-      {musicRecords.length > 0 &&
+      {isLoading ? (
+        <img
+          width={"150px"}
+          style={{ marginTop: "150px" }}
+          alt="Loading..."
+          src={Loadingpic}
+        />
+      ) : (
+        musicRecords.length > 0 &&
         musicRecords.map((el) => (
           <div key={el.id}>
             <div>
@@ -49,7 +58,8 @@ const MusicAlbums = () => {
               <button>Edit Title</button>
             </Link>
           </div>
-        ))}
+        ))
+      )}
     </>
   );
 };
